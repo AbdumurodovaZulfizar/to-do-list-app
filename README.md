@@ -33,7 +33,7 @@ cd to-do-list-app
 
 ### Live Version
 
-[ToDo List](https://abdumurodovazulfizar.github.io/TodoList-JS/)
+[ToDo List](https://abdumurodovazulfizar.github.io/to-do-list-app/)
 
 ## Authors
 
