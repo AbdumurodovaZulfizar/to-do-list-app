@@ -73,14 +73,12 @@ document.addEventListener('click', (e) => {
     const project = e.target.getAttribute('data-project');
     const controller = todoController(todoModel, todoView);
     controller.editTodo(parseInt(project, 10), parseInt(todo, 10));
-    document.querySelector('#add-todo').classList.add('d-none');
-    document.querySelector('#update-todo').classList.add('d-block');
     $(e.target.closest('.modal')).modal('hide'); // eslint-disable-line
   }
 
   if (e.target.classList.contains('add-todo')) {
-    document.querySelector('#add-todo').classList.add('d-block');
-    document.querySelector('#update-todo').classList.add('none');
+    document.querySelector('.add-task-btn').classList.toggle('d-block');
+    document.querySelector('.update-task-btn').classList.toggle('d-none');
     todoForm.reset();
     todoForm.id.value = '';
   }
@@ -96,4 +94,8 @@ document.addEventListener('click', (e) => {
 
 document.getElementById('menu-bar').addEventListener('click', () => {
   document.getElementById('navbar').classList.toggle('d-none');
+});
+
+document.querySelector('.update-task-btn').addEventListener('click', () => {
+  location.reload()
 });

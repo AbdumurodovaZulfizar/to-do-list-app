@@ -40,7 +40,7 @@ const todoView = () => {
 
       <div  class="pr-2  py-2">
       <h3 class="text-center pro fw-bold" data-project-index="${projectId}" id="project-title">${project.title}</h3>
-      <section type="button" class="pink rounded-circle shadow-plus float-end mx-3 my-2" data-toggle="modal" data-target="#todoModal">
+      <section type="button" class="pink rounded-circle shadow-plus float-end mx-3 my-2 add-todo" data-toggle="modal" data-target="#todoModal">
       <i class="fas fa-plus fa-2x padding-4"></i>
     </section>
 
