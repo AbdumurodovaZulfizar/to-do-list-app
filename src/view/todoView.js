@@ -12,10 +12,9 @@ const todoView = () => {
   <div class="modal fade" id="detailModel${index}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="detailModelLabel${index}" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title task-title" id="detailModelLabel${index}">${todo.title}</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+        <div class="modal-header pink-back p-1">
+          <h5 class="modal-title task-title px-2" id="detailModelLabel${index}">${todo.title}</h5>
+          <button type="button" class="btn-close p-3" data-dismiss="modal" aria-label="Close">
           </button>
         </div>
         <div class="modal-body">
@@ -28,8 +27,8 @@ const todoView = () => {
             </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-outline-success edit-todo" data-toggle="modal" data-target="#todoModal" data-todo="${index}" data-project="${projectId}">Edit</button>
-          <button type="submit" class="btn btn-outline-danger delete-todo" data-todo="${index}" data-project="${projectId}" >Delete</button>
+          <button type="submit" class="new-todo-button rounded py-1 px-2 text-dark edit-todo" data-toggle="modal" data-dismiss="modal" data-target="#todoModal" data-todo="${index}" data-project="${projectId}" id="edit-todo-button-click">Edit</button>
+          <button type="submit" class="btn btn-outline-danger py-1 px-2 delete-todo" data-todo="${index}" data-project="${projectId}" data-dismiss="modal">Delete</button>
         </div>
       </div>
     </div>
@@ -39,25 +38,24 @@ const todoView = () => {
   const render = (projectId, project, todos) => {
     const element = `
 
-      <div  class="d-flex justify-content-between pr-2  py-2">
-      <h3 class="text-center" data-project-index="${projectId}" id="project-title">${project.title}</h3>
-        <button type="button" class="btn btn-success add-todo" data-toggle="modal" data-target="#todoModal">
-          Add Task
-        </button>
+      <div  class="pr-2  py-2">
+      <h3 class="text-center pro fw-bold" data-project-index="${projectId}" id="project-title">${project.title}</h3>
+      <section type="button" class="pink rounded-circle shadow-plus float-end mx-3 my-2" data-toggle="modal" data-target="#todoModal">
+      <i class="fas fa-plus fa-2x padding-4"></i>
+    </section>
 
       </div>
-      <hr/>
       <ul class="list-group list-group-flush mb-4">
       ${todos.map((todo, index) => `
-        <li class="task-list-item mb-3 list-group-item list-group-item-action border-${priorityClass(todo.priority)} border-left border-bottom-0 ${todo.isCompleted ? 'task-completed' : ''}">
+        <li class="todo-item-color mb-3 mx-2 list-group-item border-${priorityClass(todo.priority)} border-left rounded border-bottom-0 ${todo.isCompleted ? 'task-completed' : ''}">
             <div class="d-flex align-items-center">
               <input type="checkbox" id="todo${index}" data-todo=${index} data-project="${projectId}" class="custom-checkbox todo-checkmark" ${todo.isCompleted ? 'checked' : ''} >
               <label for="todo${index}" class="ml-3 d-flex justify-content-between w-100 align-items-center mb-0">
                 <div class="mb-0">
-                  <h4 class="task-title">${todo.title}</h4>
+                  <h6 class="task-title">${todo.title}</h6>
                   <p class="mb-0"><small><span>Due Date:</span> <span>${todo.date}</span></small></p>
                 </div>
-                <a href="#" class="link" data-toggle="modal" data-target="#detailModel${index}">Details</a>
+                <a href="#" class="new-todo-button nav-link rounded py-1 px-2 text-dark" data-toggle="modal" data-target="#detailModel${index}">Details</a>
               </label>
             </div>
           </li>

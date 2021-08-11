@@ -19,7 +19,7 @@ form.addEventListener('submit', e => {
     controller.addProject(project.value);
     controller.showProjects();
     form.reset();
-    $('#projectModal').modal('hide'); // eslint-disable-line
+    $('#ProjectModal').modal('hide'); // eslint-disable-line
   }
 });
 

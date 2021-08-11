@@ -1,9 +1,7 @@
 const projectView = () => {
   const render = projects => {
     const element = `
-      <ul class="project-list-group pl-0 mb-4">
-        ${projects.map((project, index) => `<li class=" project-item" data-index=${index}"><span class='mr-2'> <i class='fa fa-tasks'></i></span>${project.title}</li>`).join('')}
-      </ul>
+${projects.map((project, index) => `<button type="button" class="project-item pro fs-4 px-4 menu-button" data-index="${index}">${project.title}</button><br>`).join('')}
     `;
     document.getElementById('projects').innerHTML = element;
   };
