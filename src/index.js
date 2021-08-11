@@ -73,14 +73,14 @@ document.addEventListener('click', (e) => {
     const project = e.target.getAttribute('data-project');
     const controller = todoController(todoModel, todoView);
     controller.editTodo(parseInt(project, 10), parseInt(todo, 10));
-    document.querySelector('#add-todo').style.display = 'none';
-    document.querySelector('#update-todo').style.display = 'block';
+    document.querySelector('#add-todo').classList.add('d-none');
+    document.querySelector('#update-todo').classList.add('d-block');
     $(e.target.closest('.modal')).modal('hide'); // eslint-disable-line
   }
 
   if (e.target.classList.contains('add-todo')) {
-    document.querySelector('#add-todo').style.display = 'block';
-    document.querySelector('#update-todo').style.display = 'none';
+    document.querySelector('#add-todo').classList.add('d-block');
+    document.querySelector('#update-todo').classList.add('none');
     todoForm.reset();
     todoForm.id.value = '';
   }
