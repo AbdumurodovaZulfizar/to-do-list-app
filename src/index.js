@@ -97,5 +97,5 @@ document.getElementById('menu-bar').addEventListener('click', () => {
 });
 
 document.querySelector('.update-task-btn').addEventListener('click', () => {
-  location.reload()
+  location.reload(); // eslint-disable-line
 });
