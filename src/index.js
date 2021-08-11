@@ -10,7 +10,7 @@ import todoView from './view/todoView';
 const form = document.getElementById('project-form');
 const todoForm = document.getElementById('todo-form');
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   const form = e.target;
   const { project } = form;
@@ -23,7 +23,7 @@ form.addEventListener('submit', e => {
   }
 });
 
-todoForm.addEventListener('submit', e => {
+todoForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const form = e.target;
   const {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.addEventListener('click', e => {
+document.addEventListener('click', (e) => {
   if (e.target.classList.contains('project-item')) {
     const controller = todoController(todoModel, todoView);
     controller.showTodos(parseInt(e.target.getAttribute('data-index'), 10));
@@ -73,7 +73,7 @@ document.addEventListener('click', e => {
     const project = e.target.getAttribute('data-project');
     const controller = todoController(todoModel, todoView);
     controller.editTodo(parseInt(project, 10), parseInt(todo, 10));
-    document.querySelector('#add-todo').style.display = "none";
+    document.querySelector('#add-todo').style.display = 'none';
     document.querySelector('#update-todo').style.display = 'block';
     $(e.target.closest('.modal')).modal('hide'); // eslint-disable-line
   }

@@ -2,7 +2,7 @@ const projectController = (projectModel, projectView) => {
   const model = projectModel();
   const view = projectView();
 
-  const addProject = title => {
+  const addProject = (title) => {
     const newProject = model.project(title);
     model.save(newProject);
   };

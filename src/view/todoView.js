@@ -1,5 +1,5 @@
 const todoView = () => {
-  const priorityClass = priority => {
+  const priorityClass = (priority) => {
     if (priority === 'high') {
       return 'danger';
     } if (priority === 'medium') {

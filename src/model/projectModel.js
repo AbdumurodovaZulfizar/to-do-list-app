@@ -6,7 +6,7 @@ const projectModel = () => {
   const save = (project) => {
     const projects = all();
     if (projects) {
-      if (!projects.some(item => item.title === project.title)) {
+      if (!projects.some((item) => item.title === project.title)) {
         projects.push(project);
         localStorage.setItem('projects', JSON.stringify(projects));
       }
@@ -22,7 +22,7 @@ const projectModel = () => {
 
 
   return {
-    project, all, save, get
+    project, all, save, get,
   };
 };
 
