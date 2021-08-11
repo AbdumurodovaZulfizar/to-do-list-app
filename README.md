@@ -16,11 +16,11 @@ This Application will help you create your projects and your tasks on them every
 ## To get local copy up and running follow these simple example steps
 
 ```
-git clone https://github.com/AbdumurodovaZulfizar/TodoList-JS.git
+git clone https://github.com/AbdumurodovaZulfizar/to-do-list-app.git
 ```
 
 ```
-cd TodoList-JS
+cd to-do-list-app
 ```
 ### Prerequisites
 
@@ -63,4 +63,4 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 Copyright 2021 Zulfizar Abdumurodova
-- [MIT LICENSE](https://github.com/AbdumurodovaZulfizar/TodoList-JS/blob/build_todo/LICENSE) for this project.
+- [MIT LICENSE](https://github.com/AbdumurodovaZulfizar/to-do-list-app/blob/build_todo/LICENSE) for this project.
