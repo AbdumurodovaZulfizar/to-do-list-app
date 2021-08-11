@@ -29,7 +29,7 @@ cd to-do-list-app
 
 ### Setup
 - run `npm install` to install all required node modules
-- if you vant to see live version on your local machine run `npm run build` and open live server
+- if you want to see live version on your local machine run `npm run build` and open live server
 
 ### Live Version
 
