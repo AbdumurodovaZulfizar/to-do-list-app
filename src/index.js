@@ -95,7 +95,3 @@ document.addEventListener('click', (e) => {
 document.getElementById('menu-bar').addEventListener('click', () => {
   document.getElementById('navbar').classList.toggle('d-none');
 });
-
-document.querySelector('.update-task-btn').addEventListener('click', () => {
-  location.reload(); // eslint-disable-line
-});
