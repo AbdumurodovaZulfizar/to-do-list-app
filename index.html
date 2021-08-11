@@ -76,9 +76,9 @@
       aria-labelledby="ProjectModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header pink-back">
-            <h5 class="modal-title" id="ProjectModalLabel">Add New Project</h5>
-            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header pink-back p-1">
+            <h5 class="modal-title px-2" id="ProjectModalLabel">Add New Project</h5>
+            <button type="button" class="btn-close p-3" data-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form id="project-form">
@@ -105,7 +105,7 @@
         <!-- Add Todo Detail Modal -->
         <div id="todo-detail-modal"></div>
         <!-- Add Todo Modal -->
-        <div class="modal fade" id="todoModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="todoModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="todoModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="todoModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -145,7 +145,54 @@
             </form>
             </div>
           </div>
-        </div>
+        </div> -->
+
+
+
+        <!-- Modal -->
+  <div class="modal fade" id="todoModal" data-bs-backdrop="static" data-keyboard="false" tabindex="-1"
+  aria-labelledby="todoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header pink-back p-1">
+        <h5 class="modal-title add-todo-title px-2" id="todoModalLabel">Add New ToDo</h5>
+        <h5 class="modal-title update-button px-2" id="todoModalLabel1">Update ToDo</h5>
+        <button type="button" class="btn-close p-3" data-dismiss="modal" aria-label="Close" data-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="todo-form">
+          <input type="hidden" id="id" name="id">
+          <div class="mb-3">
+            <input type="text" class="form-control" id="todo-title" name="title" aria-describedby="todoTitleHelp"
+              maxlength="40" required>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" id="todoDescription" name="description" style="height: 150px;"></textarea>
+            <label for="floatingTextarea">Description</label>
+          </div>
+          <div class="my-1">
+            <input type="date" class="form-control" name="date" id="todoDate" placeholder="Add date" required>
+          </div>
+          <div class="">
+            <select class="form-control priority-option mb-2" name='priority' id="priority">
+              <option selected disabled>Prioroty</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div class="modal-footer p-0 border-0">
+            <button type="submit" class="new-project-button rounded" id="add-todo" role="button">Create Todo</button>
+            <button type="submit" class="new-project-button rounded update-button" id="update-todo" role="button">Update Todo</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
       </div>
 
     </div>
