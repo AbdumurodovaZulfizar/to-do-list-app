@@ -1,7 +1,9 @@
 import projectModel from '../model/projectModel';
 
 import '../localStorage';
+
 const model = projectModel();
+
 describe('project function to store projects', () => {
 
   beforeEach(() => {
