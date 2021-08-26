@@ -9,6 +9,10 @@ describe('project function to store projects', () => {
     }]));
   });
 
+  afterAll(() => {
+    localStorage.removeItem('projects');
+  });
+
   test("returns object containing project title", () => {
     expect(model.project('Project')).toEqual({
       title: 'Project'
@@ -42,5 +46,5 @@ describe('project function to store projects', () => {
   test("it is not equal to Null", () => {
     expect(model.get(0)).not.toBeUndefined();
   })
-
+  
 });
