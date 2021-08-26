@@ -20,7 +20,6 @@ const projectModel = () => {
     return projects[id];
   };
 
-
   return {
     project, all, save, get,
   };
