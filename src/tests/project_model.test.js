@@ -5,7 +5,6 @@ import '../localStorage';
 const model = projectModel();
 
 describe('project function to store projects', () => {
-
   beforeEach(() => {
     localStorage.setItem('projects', JSON.stringify([{
       title: 'Project',
