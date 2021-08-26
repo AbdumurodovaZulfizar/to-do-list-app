@@ -1,11 +1,12 @@
-import projectModel from '../model/projectModel'
-import '../localStorage'
+import projectModel from '../model/projectModel';
+
+import '../localStorage';
 const model = projectModel();
 describe('project function to store projects', () => {
 
   beforeEach(() => {
     localStorage.setItem('projects', JSON.stringify([{
-      title: 'Project'
+      title: 'Project',
     }]));
   });
 
@@ -15,7 +16,7 @@ describe('project function to store projects', () => {
 
   test('returns object containing project title', () => {
     expect(model.project('Project')).toEqual({
-      title: 'Project'
+      title: 'Project',
     });
   });
   test('returns object containing project title', () => {
@@ -26,7 +27,7 @@ describe('project function to store projects', () => {
   });
   test('returns array of projects', () => {
     expect(model.all()).toEqual([{
-      title: 'Project'
+      title: 'Project',
     }]);
   });
   test('it is not equal to Null', () => {
@@ -37,7 +38,7 @@ describe('project function to store projects', () => {
   });
   test('it will return the project according to its ID', () => {
     expect(model.get(0)).toEqual({
-      title: 'Project'
+      title: 'Project',
     });
   });
   test('it is not equal to Null', () => {

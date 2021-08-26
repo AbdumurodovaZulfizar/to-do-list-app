@@ -8,5 +8,5 @@ global.localStorage = {
   },
   removeItem(key) {
     delete this.data[key];
-  }
+  },
 };

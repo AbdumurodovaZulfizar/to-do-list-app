@@ -1,26 +1,26 @@
 
-import todoModel from "../model/todoModel";
-import '../localStorage'
+import todoModel from '../model/todoModel';
+import '../localStorage';
 
-const TodoModel = todoModel()
+const TodoModel = todoModel();
 
 const todo = TodoModel.todo('To-Do', 'high', '10/10/2021', 'Todo Description');
 beforeEach(() => {
   localStorage.setItem('projects', JSON.stringify([{
-    title: 'Project'
+    title: 'Project',
   }]));
   localStorage.setItem('Project', JSON.stringify([{
     title: 'Completed Todo',
     priority: 'high',
     date: '10/10/2021',
     description: 'Todo Description',
-    isCompleted: true
+    isCompleted: true,
   }, {
     title: 'Uncompleted Todo',
     priority: 'high',
     date: '10/10/2021',
     description: 'Project has been completed',
-    isCompleted: false
+    isCompleted: false,
   }]));
 });
 afterAll(() => {
@@ -74,13 +74,13 @@ test('should not set the isCompleted as Null', () => {
   expect(todo.isCompleted).not.toBeNull();
 });
 test('returns the selected project by its ID', () => {
-  expect(TodoModel.getProject(0)).toEqual({title: 'Project'})
+  expect(TodoModel.getProject(0)).toEqual({ title: 'Project' });
 });
 test('returns the selected project by its ID', () => {
-  expect(TodoModel.getProject(0)).not.toBeNull()
+  expect(TodoModel.getProject(0)).not.toBeNull();
 });
 test('returns the selected project by its ID', () => {
-  expect(TodoModel.getProject(0)).not.toBeUndefined()
+  expect(TodoModel.getProject(0)).not.toBeUndefined();
 });
 test('returns all todos on selected project according to completed or not', () => {
   expect(TodoModel.all(0)).toEqual([{
@@ -88,13 +88,13 @@ test('returns all todos on selected project according to completed or not', () =
     priority: 'high',
     date: '10/10/2021',
     description: 'Project has been completed',
-    isCompleted: false
+    isCompleted: false,
   }, {
     title: 'Completed Todo',
     priority: 'high',
     date: '10/10/2021',
     description: 'Todo Description',
-    isCompleted: true
+    isCompleted: true,
   }]);
 });
 test('it should not be Undefined', () => {
@@ -109,7 +109,7 @@ test('returns the selected project according to todo and project id', () => {
     priority: 'high',
     date: '10/10/2021',
     description: 'Project has been completed',
-    isCompleted: false
+    isCompleted: false,
   });
 });
 test('it should not be Null', () => {
