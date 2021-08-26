@@ -31,6 +31,11 @@ cd to-do-list-app
 - run `npm install` to install all required node modules
 - if you want to see live version on your local machine run `npm run build` and open live server
 
+### Tests
+
+- run `npm test` to check all tests
+- if you want to see spesific file tests run `npm run _file name_ `
+
 ### Live Version
 
 [ToDo List](https://abdumurodovazulfizar.github.io/to-do-list-app/)
