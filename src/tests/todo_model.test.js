@@ -139,7 +139,7 @@ test('it will save the elemenr before completed projects if it is not completed'
     description: 'It is saved project',
     isCompleted: false,
   }, 0);
-  expect(TodoModel.all(0). [1]).toEqual({
+  expect(TodoModel.all(0).[1]).toEqual({
     title: 'Saved Project',
     priority: 'medium',
     date: '11/11/2021',
@@ -156,7 +156,7 @@ test('it will not equal to Null', () => {
     description: 'It is saved project',
     isCompleted: false,
   }, 0);
-  expect(TodoModel.all(0). [1]).not.toBeNull();
+  expect(TodoModel.all(0).[1]).not.toBeNull();
 });
 
 test('it will not equal to Undefined', () => {
@@ -167,7 +167,7 @@ test('it will not equal to Undefined', () => {
     description: 'It is saved project',
     isCompleted: false,
   }, 0);
-  expect(TodoModel.all(0). [1]).not.toBeUndefined();
+  expect(TodoModel.all(0).[1]).not.toBeUndefined();
 });
 
 test('it will remove the selected element from list', () => {
