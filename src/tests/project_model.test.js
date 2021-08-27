@@ -64,4 +64,16 @@ describe('project function to store projects', () => {
     model.save({ title: 'Saved Project'});
     expect(model.all().[1]).not.toBeUndefined();
   })
+  test('it will remove the selected project', () => {
+    model.remove(0);
+    expect(model.all().length).toEqual(0);
+  })
+  test('it will not equal to null', () => {
+    model.remove(0);
+    expect(model.all().length).not.toBeNull();
+  })
+  test('it will not equal to Undefined', () => {
+    model.remove(0);
+    expect(model.all().length).not.toBeUndefined();
+  })
 });
