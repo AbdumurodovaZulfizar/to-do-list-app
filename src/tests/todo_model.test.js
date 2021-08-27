@@ -1,4 +1,3 @@
-
 import todoModel from '../model/todoModel';
 import '../localStorage';
 
@@ -74,7 +73,9 @@ test('should not set the isCompleted as Null', () => {
   expect(todo.isCompleted).not.toBeNull();
 });
 test('returns the selected project by its ID', () => {
-  expect(TodoModel.getProject(0)).toEqual({ title: 'Project' });
+  expect(TodoModel.getProject(0)).toEqual({
+    title: 'Project'
+  });
 });
 test('returns the selected project by its ID', () => {
   expect(TodoModel.getProject(0)).not.toBeNull();
@@ -120,51 +121,105 @@ test('it should not be Undefined', () => {
 });
 
 test('it will save an element to the list', () => {
-  TodoModel.save({title: 'Saved Project', priority: 'medium', date: '11/11/2021', description: 'It is saved project', isCompleted: false }, 0);
+  TodoModel.save({
+    title: 'Saved Project',
+    priority: 'medium',
+    date: '11/11/2021',
+    description: 'It is saved project',
+    isCompleted: false,
+  }, 0);
   expect(TodoModel.all(0).length).toEqual(3);
-})
+});
 
 test('it will save the elemenr before completed projects if it is not completed', () => {
-  TodoModel.save({title: 'Saved Project', priority: 'medium', date: '11/11/2021', description: 'It is saved project', isCompleted: false }, 0);
-  expect(TodoModel.all(0).[1]).toEqual({title: 'Saved Project', priority: 'medium', date: '11/11/2021', description: 'It is saved project', isCompleted: false });
-})
+  TodoModel.save({
+    title: 'Saved Project',
+    priority: 'medium',
+    date: '11/11/2021',
+    description: 'It is saved project',
+    isCompleted: false,
+  }, 0);
+  expect(TodoModel.all(0). [1]).toEqual({
+    title: 'Saved Project',
+    priority: 'medium',
+    date: '11/11/2021',
+    description: 'It is saved project',
+    isCompleted: false,
+  });
+});
 
 test('it will not equal to Null', () => {
-  TodoModel.save({title: 'Saved Project', priority: 'medium', date: '11/11/2021', description: 'It is saved project', isCompleted: false }, 0);
-  expect(TodoModel.all(0).[1]).not.toBeNull();
-})
+  TodoModel.save({
+    title: 'Saved Project',
+    priority: 'medium',
+    date: '11/11/2021',
+    description: 'It is saved project',
+    isCompleted: false,
+  }, 0);
+  expect(TodoModel.all(0). [1]).not.toBeNull();
+});
 
 test('it will not equal to Undefined', () => {
-  TodoModel.save({title: 'Saved Project', priority: 'medium', date: '11/11/2021', description: 'It is saved project', isCompleted: false }, 0);
-  expect(TodoModel.all(0).[1]).not.toBeUndefined();
-})
+  TodoModel.save({
+    title: 'Saved Project',
+    priority: 'medium',
+    date: '11/11/2021',
+    description: 'It is saved project',
+    isCompleted: false,
+  }, 0);
+  expect(TodoModel.all(0). [1]).not.toBeUndefined();
+});
 
 test('it will remove the selected element from list', () => {
   TodoModel.remove(0, 1);
   expect(TodoModel.all(0).length).toEqual(1);
-})
+});
 
 test('it will not be equal to Null', () => {
   TodoModel.remove(0, 1);
   expect(TodoModel.all(0).length).not.toBeNull();
-})
+});
 
 test('it will remove the selected element from list', () => {
   TodoModel.remove(0, 1);
   expect(TodoModel.all(0).length).not.toBeUndefined();
-})
+});
 
 test('it will edit the selected element', () => {
-  TodoModel.edit(0, 1, { title: 'Edited Todo', priority: 'low', date: '01/01/2020', description: 'It is edited todo', isCompleted: false });
-  expect(TodoModel.get(0, 1)).toEqual({ title: 'Edited Todo', priority: 'low', date: '01/01/2020', description: 'It is edited todo', isCompleted: false });
-})
+  TodoModel.edit(0, 1, {
+    title: 'Edited Todo',
+    priority: 'low',
+    date: '01/01/2020',
+    description: 'It is edited todo',
+    isCompleted: false,
+  });
+  expect(TodoModel.get(0, 1)).toEqual({
+    title: 'Edited Todo',
+    priority: 'low',
+    date: '01/01/2020',
+    description: 'It is edited todo',
+    isCompleted: false,
+  });
+});
 
 test('it is not equal to Null', () => {
-  TodoModel.edit(0, 1, { title: 'Edited Todo', priority: 'low', date: '01/01/2020', description: 'It is edited todo', isCompleted: false });
+  TodoModel.edit(0, 1, {
+    title: 'Edited Todo',
+    priority: 'low',
+    date: '01/01/2020',
+    description: 'It is edited todo',
+    isCompleted: false,
+  });
   expect(TodoModel.get(0, 1)).not.toBeNull();
-})
+});
 
 test('it is not equal to Undefined', () => {
-  TodoModel.edit(0, 1, { title: 'Edited Todo', priority: 'low', date: '01/01/2020', description: 'It is edited todo', isCompleted: false });
+  TodoModel.edit(0, 1, {
+    title: 'Edited Todo',
+    priority: 'low',
+    date: '01/01/2020',
+    description: 'It is edited todo',
+    isCompleted: false,
+  });
   expect(TodoModel.get(0, 1)).not.toBeUndefined();
-})
+});

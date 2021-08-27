@@ -49,31 +49,31 @@ describe('project function to store projects', () => {
     expect(model.get(0)).not.toBeUndefined();
   });
   test('it will save the project', () => {
-    model.save({ title: 'Saved Project'});
+    model.save({ title: 'Saved Project' });
     expect(model.all().length).toEqual(2);
-  })
+  });
   test('it will save the project on the next index', () => {
-    model.save({ title: 'Saved Project'});
+    model.save({ title: 'Saved Project' });
     expect(model.all().[1]).toEqual({ title: 'Saved Project' });
-  })
+  });
   test('it will not be equal to Null', () => {
-    model.save({ title: 'Saved Project'});
+    model.save({ title: 'Saved Project' });
     expect(model.all().[1]).not.toBeNull();
-  })
+  });
   test('it will not be equal to Undefined', () => {
-    model.save({ title: 'Saved Project'});
+    model.save({ title: 'Saved Project' });
     expect(model.all().[1]).not.toBeUndefined();
-  })
+  });
   test('it will remove the selected project', () => {
     model.remove(0);
     expect(model.all().length).toEqual(0);
-  })
+  });
   test('it will not equal to null', () => {
     model.remove(0);
     expect(model.all().length).not.toBeNull();
-  })
+  });
   test('it will not equal to Undefined', () => {
     model.remove(0);
     expect(model.all().length).not.toBeUndefined();
-  })
+  });
 });

@@ -24,10 +24,10 @@ const projectModel = () => {
     const projects = all();
     projects.splice(id, 1);
     localStorage.setItem('projects', JSON.stringify(projects));
-  }
+  };
 
   return {
-    project, all, save, get, remove
+    project, all, save, get, remove,
   };
 };
 
