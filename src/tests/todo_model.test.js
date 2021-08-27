@@ -118,3 +118,38 @@ test('it should not be Null', () => {
 test('it should not be Undefined', () => {
   expect(TodoModel.get(0, 0)).not.toBeUndefined();
 });
+
+test('it will save an element to the list', () => {
+  TodoModel.save({title: 'Saved Project', priority: 'medium', date: '11/11/2021', description: 'It is saved project', isCompleted: false }, 0);
+  expect(TodoModel.all(0).length).toEqual(3);
+})
+
+test('it will save the elemenr before completed projects if it is not completed', () => {
+  TodoModel.save({title: 'Saved Project', priority: 'medium', date: '11/11/2021', description: 'It is saved project', isCompleted: false }, 0);
+  expect(TodoModel.all(0).[1]).toEqual({title: 'Saved Project', priority: 'medium', date: '11/11/2021', description: 'It is saved project', isCompleted: false });
+})
+
+test('it will not equal to Null', () => {
+  TodoModel.save({title: 'Saved Project', priority: 'medium', date: '11/11/2021', description: 'It is saved project', isCompleted: false }, 0);
+  expect(TodoModel.all(0).[1]).not.toBeNull();
+})
+
+test('it will not equal to Undefined', () => {
+  TodoModel.save({title: 'Saved Project', priority: 'medium', date: '11/11/2021', description: 'It is saved project', isCompleted: false }, 0);
+  expect(TodoModel.all(0).[1]).not.toBeUndefined();
+})
+
+test('it will remove the selected element from list', () => {
+  TodoModel.remove(0, 1);
+  expect(TodoModel.all(0).length).toEqual(1);
+})
+
+test('it will not be equal to Null', () => {
+  TodoModel.remove(0, 1);
+  expect(TodoModel.all(0).length).not.toBeNull();
+})
+
+test('it will remove the selected element from list', () => {
+  TodoModel.remove(0, 1);
+  expect(TodoModel.all(0).length).not.toBeUndefined();
+})
