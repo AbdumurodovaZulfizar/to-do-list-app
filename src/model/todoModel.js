@@ -5,9 +5,7 @@ const todoModel = () => {
     title, priority, date: dueDate, description, isCompleted: false,
   });
 
-
   const getProject = (id) => projectModel().get(id);
-
 
   const all = (projectId) => {
     const project = getProject(projectId);
