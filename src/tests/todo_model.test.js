@@ -153,3 +153,18 @@ test('it will remove the selected element from list', () => {
   TodoModel.remove(0, 1);
   expect(TodoModel.all(0).length).not.toBeUndefined();
 })
+
+test('it will edit the selected element', () => {
+  TodoModel.edit(0, 1, { title: 'Edited Todo', priority: 'low', date: '01/01/2020', description: 'It is edited todo', isCompleted: false });
+  expect(TodoModel.get(0, 1)).toEqual({ title: 'Edited Todo', priority: 'low', date: '01/01/2020', description: 'It is edited todo', isCompleted: false });
+})
+
+test('it is not equal to Null', () => {
+  TodoModel.edit(0, 1, { title: 'Edited Todo', priority: 'low', date: '01/01/2020', description: 'It is edited todo', isCompleted: false });
+  expect(TodoModel.get(0, 1)).not.toBeNull();
+})
+
+test('it is not equal to Undefined', () => {
+  TodoModel.edit(0, 1, { title: 'Edited Todo', priority: 'low', date: '01/01/2020', description: 'It is edited todo', isCompleted: false });
+  expect(TodoModel.get(0, 1)).not.toBeUndefined();
+})
