@@ -74,7 +74,7 @@ test('should not set the isCompleted as Null', () => {
 });
 test('returns the selected project by its ID', () => {
   expect(TodoModel.getProject(0)).toEqual({
-    title: 'Project'
+    title: 'Project',
   });
 });
 test('returns the selected project by its ID', () => {
